@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Diagnostics;
-using System.Threading;
-
-namespace Puzzle_Solver
+﻿namespace Puzzle_Solver
 {
     public class Graph
     {
@@ -40,7 +31,7 @@ namespace Puzzle_Solver
                 else if (solveSelection == 1)
                     solveByHamming();
                 else
-                    BFS();
+                    DFS();
 
                 isSolve = true;
             }
@@ -51,7 +42,7 @@ namespace Puzzle_Solver
             public PriorityQueue<Node, int> children = new PriorityQueue<Node, int>();
             public PriorityQueue<Node, int> parentQueue = new PriorityQueue<Node, int>();
         }
-        void BFS()
+        void DFS()
         {
             manhattanValue = calcManhattanWeight();
             bool isSolved = false;

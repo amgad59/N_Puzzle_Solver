@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Puzzle_Solver
 {
-    
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -20,25 +20,27 @@ namespace Puzzle_Solver
         DataReader dr = new DataReader();
         private void insertPuzzle_btn_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(puzzleSize_tb.Text)<=10)
+            if (Convert.ToInt32(puzzleSize_tb.Text) <= 10)
             {
                 NewPuzzleForm newPuzzleForm = new NewPuzzleForm(Convert.ToInt32(puzzleSize_tb.Text));
                 newPuzzleForm.Show();
             }
-            else {
+            else
+            {
                 MessageBox.Show("maximum N value is 10");
             }
         }
 
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             readData();
             manhattan_rb.Checked = true;
         }
-        private void readData() {
-            
-            foreach(var i in dr.listSamples())
+        private void readData()
+        {
+
+            foreach (var i in dr.listSamples())
                 selectTest_cb.Items.Add(i.getKey());
 
         }
@@ -51,7 +53,8 @@ namespace Puzzle_Solver
                 BFS_rb.Enabled = false;
                 manhattan_rb.Checked = true;
             }
-            else {
+            else
+            {
                 hamming_rb.Enabled = true;
                 BFS_rb.Enabled = true;
             }
@@ -101,8 +104,8 @@ namespace Puzzle_Solver
                 solveSelection = 0;
             else
                 solveSelection = 1;
-                  
-            SolveWindow solveWindow = new SolveWindow(dr.getPuzzleMatrix(), dr.getPuzzleList(), (ushort)dr.getSize(),solveSelection);
+
+            SolveWindow solveWindow = new SolveWindow(dr.getPuzzleMatrix(), dr.getPuzzleList(), (ushort)dr.getSize(), solveSelection);
             solveWindow.Show();
         }
     }
