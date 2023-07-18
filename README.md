@@ -1,5 +1,6 @@
 # N puzzle solver application
-the application uses the A* search utilizing one of the 2 distances Manhatten or Hamming or using the DFS algorithm which is not optimal because it can find a way that
+An application to solve the famous N-Puzzle Game
+The application uses the A* search utilizing one of the 2 distances Manhatten or Hamming or using the DFS algorithm which is not optimal because it can find a way that
 isn't the shortest path
 ## Home page  
 ![image](https://github.com/amgad59/N_Puzzle_Solver/assets/76216074/f05f69f1-63b2-46c1-9f23-503fa3550db0)
